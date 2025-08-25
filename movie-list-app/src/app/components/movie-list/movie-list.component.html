@@ -1,0 +1,19 @@
+<div class="header">
+  <h2>⭐ Average Rating: {{ averageRating }}</h2>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Filter by Genre</mat-label>
+    <mat-select [(ngModel)]="selectedGenre">
+      <mat-option *ngFor="let g of genres" [value]="g">
+        {{ g }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div class="grid">
+  <app-movie-card
+    *ngFor="let movie of filteredMovies"
+    [movie]="movie">
+  </app-movie-card>
+</div>

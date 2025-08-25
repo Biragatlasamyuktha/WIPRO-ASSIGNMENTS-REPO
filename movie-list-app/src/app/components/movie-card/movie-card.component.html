@@ -1,0 +1,13 @@
+<div class="movie-card">
+  <h2>{{ movie.title }}</h2>
+  <h4>{{ movie.genre }}</h4>
+  <img [src]="movie.poster" alt="{{ movie.title }}" class="poster" />
+
+  <p>{{ movie.description }}</p>
+
+  <div class="rating">
+    <span *ngFor="let star of [1,2,3,4,5]">
+      <span [ngClass]="star <= movie.rating ? 'filled' : ''">❤️</span>
+    </span>
+  </div>
+</div>
